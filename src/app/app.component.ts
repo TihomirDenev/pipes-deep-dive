@@ -12,7 +12,7 @@ import { SortPipe } from "./sort.pipe";
 })
 export class AppComponent {
   currentDate = new Date();
-  currentTemperaturs = {
+  currentTemperatures = {
     berlin: 4.2749812,
     newYork: 18.1214,
     paris: 72.1209001,
@@ -22,6 +22,10 @@ export class AppComponent {
   historicTemperatures = [
     25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
   ];
+
+  constructor() {
+    this.historicTemperatures.sort((a, b) => (a > b ? 1 : -1));
+  }
 
   onReset(index: number) {
     this.historicTemperatures[index] = 18;
