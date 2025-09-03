@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,15 +17,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install Chrome for testing
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 'latest'
 
       - name: Install dependencies
         run: |
           npm install -g @angular/cli
-          npm install
-
-      - name: Build Angular app
-        run: npm run build
-
-      - name: Run tests
-        run: npm test
+          npm ci
+          
+      - name: Run tests with ChromeHeadless
+        run: |
+          export CHROME_BIN=/usr/bin/google-chrome
+          export DISPLAY=:99.0
+          /usr/bin/Xvfb :99 -screen 0 1280x1024x24 &
+          npm test -- --browsers=ChromeHeadless --watch=false --code-coverage
