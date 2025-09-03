@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g @angular/cli
-          npm ci
+          npm install
           
       - name: Run tests with ChromeHeadless
         run: |
