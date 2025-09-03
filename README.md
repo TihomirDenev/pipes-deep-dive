@@ -1,38 +1,44 @@
-<h2 align="center">
-  Welcome to the PipesDeepDive<br/>
-  <a href="https://github.com/TihomirDenev/pipes-deep-dive" target="_blank">Check it out on GitHub</a>
-</h2>
+# 🌡️ Angular Pipes Deep Dive
+
 <div align="center">
   <img src="public/temp-icon.png" alt="Temperature" style="height: 160px;" />
+  <p>
+    <a href="https://github.com/TihomirDenev/pipes-deep-dive" target="_blank">View on GitHub</a>
+  </p>
 </div>
-
 
 # 📝 Description
 
-
-
+This project demonstrates the power and flexibility of Angular Pipes through practical examples. It showcases both built-in and custom pipes in an interactive temperature conversion application.
 
 # 🔎 Example
 
-
+The application demonstrates:
+- Built-in pipes: `DatePipe`, `DecimalPipe`
+- Custom pipes: `TemperaturePipe`, `SortPipe`
+- Pipe parameters and chaining
+- Pure vs impure pipes
 
 # 🗃️ Technologies Used
 
-- **_Angular 18:_** For building a responsive and dynamic single-page application.
-- **_TypeScript:_** To ensure type safety and scalable application development.
-- **_CSS:_** For custom styling and responsive design.
+- **Angular 18**: For building a responsive single-page application
+- **TypeScript**: For type-safe application development
+- **CSS**: For clean and responsive design
+- **RxJS**: For reactive programming patterns
 
 # 💡 Features
 
-- **_Real-time Updates:_** Instantly see updates in investment projections as you modify inputs.
-- **_Responsive Design:_** Works seamlessly across various devices and screen sizes.
+- **Temperature Conversion**: Convert between Celsius and Fahrenheit
+- **Date Formatting**: Display dates in a user-friendly format
+- **Sorting**: Sort temperature data in ascending or descending order
+- **Interactive UI**: Click to reset temperature values
 
-# ✅ Getting Started
+# 🚀 Getting Started
 
-1. Clone the Place Picker [GitHub repository](https://github.com/TihomirDenev/pipes-deep-dive) locally:
+1. Clone the repository:
 
 ```bash
-https://github.com/TihomirDenev/pipes-deep-dive.git
+git clone https://github.com/TihomirDenev/pipes-deep-dive.git
 ```
 
 2. Navigate to the project directory:
@@ -41,13 +47,43 @@ https://github.com/TihomirDenev/pipes-deep-dive.git
 cd pipes-deep-dive
 ```
 
-3. Install Dependencies Before running the project.
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-4. To run the project, use the following command:
+4. Start the development server:
+
+```bash
+ng serve
+```
+
+5. Open your browser and navigate to `http://localhost:4200`
+
+# 📦 Custom Pipes
+
+## TemperaturePipe
+Converts temperature values between Celsius and Fahrenheit:
+
+```typescript
+// Usage in template
+{{ temperature | temp:'cel':'fah' }}  // Convert from Celsius to Fahrenheit
+{{ temperature | temp:'fah':'cel' }}  // Convert from Fahrenheit to Celsius
+```
+
+## SortPipe
+Sorts arrays in ascending or descending order (impure pipe):
+
+```typescript
+// Usage in template
+{{ array | sort:'asc' }}  // Sort ascending
+{{ array | sort:'desc' }} // Sort descending
+```
+
+# 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ```bash
 npm run start
