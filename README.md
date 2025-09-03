@@ -1,5 +1,7 @@
 # 🌡️ Angular Pipes Deep Dive
 
+> 🎯 Quickdraw Achievement: Successfully merged a PR within 5 minutes!
+
 <div align="center">
   <img src="public/temp-icon.png" alt="Temperature" style="height: 160px;" />
   <p>
